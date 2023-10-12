@@ -1,0 +1,58 @@
+
+footer{
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10px;
+    border-top:1px solid black;
+}
+header{
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    height: 60px;
+}
+
+.nav-item{
+    cursor: pointer;
+    padding-bottom:4px;
+}
+.nav-item:hover{
+    border-bottom: 4px solid yellow;
+}
+
+
+.loginPage{
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,1) 5%, rgba(9,9,121,1) 47%, rgba(0,212,255,1) 100%);
+}
+.cadastroPage{
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    background: rgb(0,36,12);
+    background: linear-gradient(45deg, rgba(0,36,12,1) 5%, rgba(9,121,55,1) 47%, rgba(0,212,255,1) 100%);
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.erroMessage{
+    background-color: red;
+    padding: 5px;
+    border-radius: 25px;
+}
