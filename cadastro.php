@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             echo ("<script>alert('O email já está cadastrado.')</script>");
         } else {
             $hashsenha = password_hash($senha, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO usuarios (nome, senha, email) VALUES ('$nome', '$hashsenha', '$email')";   
+            $sql = "INSERT INTO usuarios (nome, senha, email, tipo) VALUES ('$nome', '$hashsenha', '$email', '2')";   
             if($newconexao->exec($sql)){
                 $mensagemSucesso = 'Cadastro realizado com sucesso!';
                 // $id = $newconexao->lastInsertId();

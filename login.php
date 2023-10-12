@@ -21,7 +21,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         if(password_verify($senha,$user['senha'])){
             session_start();
             $_SESSION['usuario'] = $email; 
-            header('Location: clientes.php');
+            $_SESSION['nivel_acesso'] = $user['tipo'];
+            if($user['tipo'] == '2'){
+               header('Location: produtos.php');
+               return;
+            }
+           header('Location: clientes.php');
+         // var_dump($user['tipo']);
             
         }else{
             echo("<script>alert('Email ou Senha inválido!')</script>");
@@ -59,7 +65,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body class="loginPage" style=" display:flex; flex-direction: column; justify-content:center;align-items:center;">
-    <div><?php echo $erro ?? '' ?> </div>
+    <div ><?php echo $erro ?? '' ?> </div>
     <form action="#" method="POST">
         <h2>Bem vindo ao Sistema!</h2>
         <div class="mb-3">
